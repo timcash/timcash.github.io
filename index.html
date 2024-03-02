@@ -1,46 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Tim Cash</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Tim Cash</section>
-				<section>Software Development
+    <!-- Theme used for syntax highlighted code -->
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+					<h2>Tim Cash</h2>
+					<p>Software Engineer</p>
+					<p>Robotic Manufacturing</p>
+
 				</section>
-				<section>Engineering Management</section>
-				<section>
-					<h1>Robotic Manufacturing</h1>
-					<video data-autoplay src="videos/yaskawa_short.mp4"></video>
-				</section>
-			</div>
-		</div>
+        <section>Software Development</section>
+        <section>Engineering Management</section>
+        <section>
+          <h2>Robotic Manufacturing</h2>
+          <video data-autoplay src="videos/yaskawa_short.mp4"></video>
+        </section>
+        <section>
+          <h2>The Lorenz Equations</h2>
+          \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho
+          x - y - xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+      Reveal.initialize({
+        hash: true,
+        // Activate the scroll view
+        view: "scroll",
+        // Force the scrollbar to remain visible
+        scrollProgress: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMath],
+      });
+    </script>
+  </body>
 </html>
