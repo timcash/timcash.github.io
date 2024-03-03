@@ -14,33 +14,83 @@
     <link rel="stylesheet" href="dist/theme/black.css" />
 
     <!-- Theme used for syntax highlighted code -->
+    <style>
+      /* color vars */
+      :root {
+        --color-aware: #408fea;
+        --color-focus: #f69902;
+        --color-alert: #ff4800;
+        --color-text: #ddd;
+        --color-subtext: #bbb;
+        --color-border: #ddd;
+        --color-shadow: #444;
+        --color-background: black;
+        --gradient: linear-gradient(45deg, #ff00a2, #7300ee);
+        --gradient-green: linear-gradient(45deg, #00711a, #d3eb00);
+        --gradient-blue: linear-gradient(45deg, #81bbf8, #0178a4);
+        --gradient-orange: linear-gradient(45deg, #ff6a00, #ffcc00);
+        --r-link-color: #fff;
+      }
 
+      .left {
+        text-align: left;
+      }
+
+      .grey {
+        color: grey;
+      }
+
+			/* a class to make a black text outline */
+			.outline {
+				-webkit-text-stroke: 1px black;
+			}
+
+
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section>
-					<h2>Tim Cash</h2>
-					<p>Software Engineer</p>
-					<p>Robotic Manufacturing</p>
+          <div style="display: flex">
+            <h1 class="left">Tim Cash</h1>
+          </div>
 
-				</section>
-        <section>Software Development</section>
-        <section>Engineering Management</section>
-        <section>
-          <h2>Robotic Manufacturing</h2>
-          <video data-autoplay src="videos/yaskawa_short.mp4"></video>
+          <p class="left grey">
+            Mathematician, Engineer, and Software Developer
+          </p>
+          <div class="left">
+            <p>Software Development</p>
+            <p>Engineering Management</p>
+            <p>Robotic Manufacturing</p>
+            <p>Robotic Welding</p>
+            <p>Robotic Metrology</p>
+          </div>
+          <a
+            class="buy_button orange-glow"
+            href="https://buy.stripe.com/4gw29YguIc2Of7i7sv"
+            >Sign Up</a>
         </section>
-        <section>
-          <h2>The Lorenz Equations</h2>
-          \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho
-          x - y - xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
+        <section
+          data-background-video="videos/yaskawa_short.mp4"
+          data-background-video-loop
+          data-background-video-muted
+        >
+          <span class="r-fit-text outline">Robotic</span>
+          <span class="r-fit-text ">Vision</span>
+        </section>
+        <section
+          data-background-video="videos/weld_tack.mp4"
+          data-background-video-loop
+          data-background-video-muted
+        >
+          <span class="r-fit-text black-on-white">Robotic Welding</span>
         </section>
       </div>
     </div>
 
     <script src="dist/reveal.js"></script>
-		<script src="plugin/math/math.js"></script>
+    <script src="plugin/math/math.js"></script>
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
