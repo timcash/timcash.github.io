@@ -5,13 +5,29 @@
 - programming
 - github
 
+# Partitioning
+- lines
+- points
+- surface of a sphere
+- curve
+- graph
+- geometric
+- algebraic
+- probability
+
+# Order
+- non ordered
+- total order
+- partial order
+- preorder
+
 # DAG
 
 ### A directed acyclic graph (DAG) is a graph that has no cycles and is directed. This means that the edges have a direction and that there is no way to start at a vertex and follow the edges back to the same vertex. This is useful in many applications, such as scheduling, task management, and data processing.
 
 # Void(canvas)
 ```mermaid
-graph LR
+graph
   Space1[algebraic]
   Space2[geometric]
   Space3[trigonometric]
@@ -19,17 +35,13 @@ graph LR
 
 # Nodes ( no order )
 ```mermaid
-graph TD
+graph
     A
     B
     C
 ```
 
-# Order
-- non ordered
-- total order
-- partial order
-- preorder
+
 
 # Edges
 ```mermaid
