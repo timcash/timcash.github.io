@@ -1,11 +1,9 @@
 # Tools
 - mathematica
 - vscode
-- math
-- programming
 - github
 
-# Partitioning
+# Partitioning Space
 - lines
 - points
 - surface of a sphere
@@ -96,7 +94,10 @@ graph LR
     A --> B
     B --> C
     A --> D
+    A -.-> D
     style A fill:#009900
+    linkStyle 2 stroke:red,stroke-width:1px;
+    linkStyle 3 stroke:#44f,stroke-width:3px;
 ```
 
 # BiCartesian Category
