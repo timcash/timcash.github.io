@@ -1,354 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-
-    <title>Tim Cash</title>
-
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" />
-
-    <!-- Theme used for syntax highlighted code -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Web Page</title>
     <style>
-      /* color vars */
-      :root {
-        --color-aware: #408fea;
-        --color-focus: #f69902;
-        --color-alert: #ff4800;
-        --color-text: #ddd;
-        --color-subtext: #bbb;
-        --color-border: #ddd;
-        --color-shadow: #444;
-        --color-background: black;
-        --gradient: linear-gradient(45deg, #ff00a2, #7300ee);
-        --gradient-green: linear-gradient(45deg, #00711a, #d3eb00);
-        --gradient-blue: linear-gradient(45deg, #81bbf8, #0178a4);
-        --gradient-orange: linear-gradient(45deg, #ff6a00, #ffcc00);
-        --r-link-color: #fff;
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        scroll-snap-type: y mandatory;
       }
 
-      .left {
-        text-align: left;
-      }
+      .section-title {
+        font-family: monospace; /* Example of a blocky font */
+        font-size: 20px;
+        font-weight: bold;
+        font-stretch: expanded;
 
-      .pad {
-        padding: 2em;
-      }
-
-      .grey {
-        color: grey;
-      }
-
-      /* a class to make a black text outline */
-      .outline {
-        -webkit-text-stroke: 1px black;
-      }
-
-      /* make a links look like rounded buttons with a simple white border */
-      a {
-        display: inline-block;
-        padding: 0.5em 1em;
-        border: 1px solid transparent;
-        border-radius: 1.5em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
         color: white;
-        text-decoration: none;
-        background: rgb(255, 102, 0);
+        padding: 10px;
+        z-index: 2; /* Ensure the title is above the video/background */
       }
 
-      .wide50 {
-        width: 45%;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          background-position-x: 0%;
-        }
-        50% {
-          background-position-x: 150%;
-        }
-      }
-
-      .orange-glow {
-        background: var(--gradient-orange);
-        animation: pulse 1s ease-in-out infinite;
-        background-size: 100% 150%;
-        background-position-y: 200%;
-        -webkit-box-shadow: 0px 0px 24px 14px rgba(250, 158, 0, 0.62);
-        -moz-box-shadow: 0px 0px 24px 14px rgba(250, 158, 0, 0.62);
-        box-shadow: 0px 0px 24px 14px rgba(250, 158, 0, 0.62);
-      }
-
-      /* 2 column using flexbox */
-      .column2 {
+      section {
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: start;
+        overflow: hidden;
+        position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .pad {
-        padding: 0.25em;
-      }
-
-      video {
-        filter: brightness(20%);
+      .bg-image,
+      .bg-video {
+        position: absolute;
+        top: 0; /* Align top-left corner of video with section */
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1; /* Ensure background is below the title */
       }
     </style>
   </head>
   <body>
-    <div class="reveal">
-      <div class="slides">
-        <section
-          data-background-video="videos/weld_tack.mp4"
-          data-background-video-loop
-          data-background-video-muted
-          class="video-dim"
-        >
-          <div>
-            <h1 class="left">Tim Cash</h1>
-            <p class="left grey">
-              Mathematician, Automation Engineer, Machine Vision
-            </p>
-            <div class="left column2">
-              <div class="pad">
-                <p>Software Development</p>
-                <p>Engineering Management</p>
-                <p>Robotic Manufacturing</p>
-              </div>
-              <div class="pad">
-                <p>Metrology Scanning</p>
-                <p>Robotic Welding</p>
-                <p>Geospatial Intelligence</p>
-              </div>
-            </div>
-          </div>
-          <a
-            id="signup"
-            href="https://buy.stripe.com/4gw29YguIc2Of7i7sv"
-            class="wide50"
-            >Create Contract</a
-          >
-        </section>
+    <section id="section1">
+      <div class="section-title">SECTION 1</div>
+      <!-- Placeholder for background image -->
+    </section>
 
-        <section
-          data-background-video="videos/yaskawa_short.mp4"
-          data-background-video-loop
-          data-background-video-muted
-        >
-          <span class="r-fit-text outline">Robotic Vision</span>
-        </section>
-        <section
-          data-background-video="videos/weld_tack.mp4"
-          data-background-video-loop
-          data-background-video-muted
-        >
-          <span class="r-fit-text outline">Robotic Welding</span>
-        </section>
-        <section class="left pad">
-          <h2>Software Development</h2>
+    <section id="section2">
+      <div class="section-title">Section 2</div>
+      <!-- Placeholder for background video -->
+    </section>
 
-          <canvas class="r-stretch" id="stage2"></canvas>
-          <script>
-            const canvas = document.getElementById("stage2");
-            const ctx = canvas.getContext("2d");
-            // put the canvas as a background and fill the window
-            canvas.style.position = "fixed";
-            // make it behind everything
-            canvas.style.zIndex = "-1";
+    <section id="section3">
+      <div class="section-title">Section 3</div>
+      <!-- Placeholder for background video -->
+    </section>
 
-            // set w and h to the width and height of the canvas
-            let w = window.innerWidth;
-            let h = window.innerHeight;
-
-            // set w and h to the least of w and h
-            if (w > h) {
-              w = h;
-            } else {
-              h = w;
-            }
-
-            // ...then set the internal size to match
-            canvas.width = w;
-            canvas.height = h;
-            console.log(w, h);
-
-            // convert polar to cartesian coordinates
-            function polarToCartesian(r, theta) {
-              return {
-                x: r * Math.cos(theta),
-                y: r * Math.sin(theta),
-              };
-            }
-
-            // convert cartesian to polar coordinates
-            function cartesianToPolar(x, y) {
-              return {
-                r: Math.sqrt(x * x + y * y),
-                theta: Math.atan2(y, x),
-              };
-            }
-
-            // given a float:0-1 return int:0-360
-            function scale360(f) {
-              return f * 360;
-            }
-
-            // given int:0-360 return radians:0-2pi
-            function radians(degrees) {
-              return (degrees * Math.PI) / 180;
-            }
-
-            function line(start, end, color) {
-              return {
-                start,
-                end,
-                color,
-              };
-            }
-
-            // given float:0-1 return hsl:0-360
-            function hsl(h_01, opacity) {
-              return `hsla(${h_01 * 360}, 100%, 50%, ${opacity})`;
-            }
-
-            function generateLine(start_index, multiple, partitions, opacity) {
-              const start_idx = start_index % partitions;
-              const end_idx = (start_index * multiple) % partitions;
-              const start_xy = getXYbyIndex(start_idx, partitions);
-              const end_xy = getXYbyIndex(end_idx, partitions);
-              const progress = start_index / partitions;
-              const color = hsl(progress, opacity);
-              return line(start_xy, end_xy, color);
-            }
-
-            function getXYbyIndex(index, partitions) {
-              const radius = Math.min(w / 2, h / 2);
-              const radians_per_partition = (2 * Math.PI) / partitions;
-              const radians = radians_per_partition * index - Math.PI / 2;
-              const xy = polarToCartesian(radius, radians);
-              return xy;
-            }
-
-            // {start, end, color} => dra {
-            function drawLine(line) {
-              // add center to line.start and line.end
-              const start = {
-                x: line.start.x + center.x,
-                y: line.start.y + center.y,
-              };
-              const end = {
-                x: line.end.x + center.x,
-                y: line.end.y + center.y,
-              };
-
-              ctx.beginPath();
-              ctx.moveTo(start.x, start.y);
-              ctx.lineTo(end.x, end.y);
-              ctx.strokeStyle = line.color;
-              ctx.stroke();
-              ctx.closePath();
-            }
-
-            // get the multiplier element
-            const multiplier = 0.01;
-
-            let direction = 1;
-            function drawLines(elapsed) {
-              const turns_per_second = 1.0;
-              const seconds_elapsed = elapsed / 1000;
-              const current_turn = turns_per_second * seconds_elapsed + 2;
-
-              const tail_turn =
-                current_turn - Math.abs(Math.sin(seconds_elapsed / 5));
-              const partitions = 360;
-              const turns_per_partition = 1 / partitions;
-              if (current_turn > partitions) {
-                direction = -1;
-              } else if (current_turn < partitions) {
-                direction = 1;
-              }
-
-              // ========================================================
-              // UPDATE UI
-              // ========================================================
-              // turn.innerHTML = current_turn.toFixed(2);
-              // tail.innerHTML = tail_turn.toFixed(2);
-
-              for (
-                let i = tail_turn;
-                i <= current_turn;
-                i += turns_per_partition
-              ) {
-                if (i < 0) {
-                  continue;
-                }
-                const idx = Math.floor(i * partitions);
-                const mult = Math.floor(i);
-                const line = generateLine(idx, mult, partitions, 1);
-                drawLine(line);
-              }
-            }
-
-            // world center coordinates at half the canvas width and height
-            const center = {
-              x: canvas.width / 2,
-              y: canvas.height / 2,
-            };
-
-            let prev_frame_number = -1;
-            let start, previousTimeStamp;
-            let done = false;
-
-
-            // start a request animation frame loop
-            async function step(timestamp) {
-              if (start === undefined) {
-                start = timestamp;
-              }
-              const elapsed = timestamp - start; // in milliseconds
-              // slow it down by 1/2
-              let scaled_elapsed = elapsed / 10;
-
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                drawLines(scaled_elapsed);
-
-
-              window.requestAnimationFrame(step);
-            }
-
-            window.requestAnimationFrame(step);
-          </script>
-        </section>
-        <section class="left pad">
-          <h2>Geospatial Intelligence</h2>
-          <!-- a paragraph about how we deploy CI/CD on the cloud for fast iteration-->
-          <p>
-            C4 ISR systems for real time encryted communication with embeded
-            geospatial tools
-          </p>
-        </section>
-      </div>
-    </div>
-
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/math/math.js"></script>
     <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
+      // Intersection Observer to lazy load background images and videos
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Check section ID to determine content type
+              switch (entry.target.id) {
+                case "section1":
+                  entry.target.style.backgroundImage = 'url("image1.webp")';
+                  entry.target.style.backgroundSize = "cover";
+                  entry.target.style.backgroundPosition = "center";
+                  break;
+                case "section2":
+                  const video1 = document.createElement("video");
+                  video1.src = "video1.mp4";
+                  video1.classList.add("bg-video");
+                  video1.autoplay = true;
+                  video1.loop = true;
+                  video1.muted = true;
+                  entry.target.appendChild(video1);
+                  break;
+                case "section3":
+                  const video2 = document.createElement("video");
+                  video2.src = "video2.mp4";
+                  video2.classList.add("bg-video");
+                  video2.autoplay = true;
+                  video2.loop = true;
+                  video2.muted = true;
+                  entry.target.appendChild(video2);
+                  break;
+              }
+              observer.unobserve(entry.target); // Stop observing the current target
+            }
+          });
+        },
+        {
+          rootMargin: "0px",
+          threshold: 0.1, // Trigger when 10% is visible
+        }
+      );
 
-      Reveal.initialize({
-        hash: true,
-        // Activate the scroll view
-        view: "scroll",
-        // Force the scrollbar to remain visible
-        scrollProgress: true,
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMath],
+      // Observe all sections
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
       });
     </script>
   </body>
